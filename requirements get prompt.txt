@@ -1,0 +1,20 @@
+cd "C:\path\to\your\notebooks"
+Get-ChildItem *.ipynb | ForEach-Object {jupyter nbconvert --to script $_.Name}
+将以上命令行语句复制到命令行窗口，然后将上述"C:\path\to\your\notebooks"地址改为AOP_MDL文件夹下的codeTrans文件夹地址，然后运行
+命令行将批量将.ipynb文件转化成.py文件
+
+
+成功后运行以下命令行
+
+
+pip install pipreqs
+pipreqs /path/to/project/
+将以上命令行语句复制到命令行窗口，然后将上述"/path/to/project/"地址改为AOP_MDL文件夹下的codeTrans文件夹地址，然后运行
+命令行语句将批量扫描.py文件，获取运行代码需要的相关环境依赖requirements，然后保存到原文件夹下的requirements.txt文件里
+
+
+成功后运行以下命令
+
+pip install -r "path\requirements.txt"
+将以上命令行语句复制到命令行窗口，然后将上述"path\requirements.txt"地址改为上一步生成的requirements.txt的地址，然后运行
+命令行语句将下载requirements.txt文件里记录的运行依赖
